@@ -53,5 +53,13 @@ print(set((1,2,3))) # Output: {1, 2, 3}
 print(set([1,3,6,3])) # Output: {1, 3, 6}
 
 # -- Tugas Praktik --
+text = "Belajar Python di DQLab."
+print(list(text))
+print(tuple(text))
+print(set(text))
 
 # -- Menggunakan Library di Python --
+import math
+import numpy as np
+import pandas as pd
+import seaborn as sns
