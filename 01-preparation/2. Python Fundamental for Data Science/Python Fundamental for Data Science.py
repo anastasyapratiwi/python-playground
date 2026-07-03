@@ -167,3 +167,127 @@ modulus = c % d
 print("Hasil modulus", modulus)
 
 # --- TUGAS MID PRAKTIK ---
+angka = 10
+
+if angka % 2 == 0:
+    print("angka termasuk bilangan genap")
+else:
+    print("angka termasuk bilangan ganjil")
+
+angka = 5
+if angka % 2 == 0:
+    print("angka termasuk bilangan genap")
+else:
+    print("angka termasuk bilangan ganjil")
+
+# --- WHILE ---
+# nilai awal j = 0
+j = 0
+
+# ketika j kurang dari 6 lakukan perulangan, jika tidak stop perulangan
+while j < 6:
+    # lakukan perintah ini ketika perulangan
+    print("Ini adalah perulangan ke -", j)
+    # setiap kali diakhir perulangan update nilai dengan ditambah 1.
+    j = j + 1
+
+# --- FOR (1) ---
+for i in range(
+    1, 6
+):  # perulangan for sebagai inisialisasi dari angka 1 hingga angka yang lebih kecil daripada 6.
+
+    print("Ini adalah perulangan ke -", i)  # perintah jika looping akan tetap berjalan.
+
+# --- FOR (2) WITH ACCESS ELEMENT ---
+count = [1, 2, 3, 4, 5]  # elemen list
+for number in count:  # looping untuk menampilkan semua elemen pada count
+    print("Ini adalah element count : ", number)  # menampilkan elemen list pada count
+
+# Tugas Praktik
+for i in range(1, 11):
+    if i % 2 == 0:
+        print("Angka genap", i)
+    else:
+        print("Angka ganjil", i)
+
+# --- MEMBUAT FUNGSI SENDIRI ---
+def nama_fungsi():
+    print("Hello ini Fungsi")
+
+def hello():
+    print("Hello")
+    print("Welcome to Dqlab")
+
+# Cara memanggil fungsi:
+nama_fungsi()
+
+# Tugas Praktik
+# Membuat Fungsi
+def salam():
+    print("Hello, Selamat Pagi")
+
+## Pemanggilan Fungsi
+salam()
+
+# --- PARAMETER PADA FUNGSI ---
+def hello(parameter):
+    print(parameter)
+    print("Fungsi dengan Parameter")
+
+# Tugas Praktik
+def luas_segitiga(alas, tinggi):  # alas dan tinggi merupakan parameter yang masuk
+    luas = (alas * tinggi) / 2
+    print("luas segitiga: %f" % luas)
+
+# Pemanggilan fungsi
+## 4 dan 6 merupakan parameter yang diinputkan kedalam fungsi luas segitiga
+luas_segitiga(4, 6)
+
+# --- FUNGSI DENGAN RETURN VALUE ---
+"""
+def hello(a, b):
+	int c
+	c = a+b
+	return c
+"""
+
+# Tugas Praktik
+# alas dan tinggi merupakan parameter yang masuk
+def luas_segitiga(alas, tinggi):
+    luas = (alas * tinggi) / 2
+    return luas
+
+# Pemanggilan fungsi
+## 4 dan 6 merupakan parameter yang diinputkan kedalam fungsi luas segitiga
+print("luas segitiga: %d" % luas_segitiga(4, 6))
+
+# --- IMPORT DENGAN MODULE RENAME ATAU ALIAS ---
+import math as m
+print("Nilai pi adalah:", m.pi)
+
+# --- IMPORT SEBAGIAN FUNGSI ---
+from math import pi
+print("Nilai pi adalah", pi)
+
+# --- IMPORT SEMUA ISI MODULS
+from math import *
+print("Nilai e adalah", e)
+
+# --- MEMBACA TEKS FILE (CSV) ---
+import requests
+from contextlib import closing
+import csv
+
+# tentukan lokasi file, nama file, dan inisialisasi csv
+url = "https://storage.googleapis.com/dqlab-dataset/penduduk_gender_head.csv"
+
+# baca file csv secara streaming
+with closing(requests.get(url, stream=True)) as r:
+    f = (line.decode("utf-8") for line in r.iter_lines())
+    reader = csv.reader(f, delimiter=",")
+
+    # membaca baris per baris
+    for row in reader:
+        print(row)
+
+# Tugas Praktik
