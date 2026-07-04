@@ -177,3 +177,258 @@ plt.tight_layout()
 plt.show()
 
 # --- Menentukan Annual Income & Spending Score Berdasarkan Genre dan Usia ---
+# Kode sebelumnya
+import pandas as pd
+
+dataset_shopping = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/shopping_data.csv', delimiter=',')
+
+def label_usia(row):
+    if row['Age'] < 21:
+        return 'remaja'
+    if row['Age'] < 40:
+        return 'dewasa muda'
+    if row['Age'] < 55:
+        return 'dewasa'
+    return 'pensiun'
+
+dataset_shopping['Range Usia'] = dataset_shopping.apply(lambda row: label_usia(row), axis=1)
+
+# Mengelompokkan 'Annual Income (k$)' dan 'Spending Score (1-100)' berdasarkan 'Genre' dan 'Range Usia', serta mengambil agregasinya (yaitu nilai rata-rata atau mean) berdasarkan pengelompokan tersebut
+group_income = dataset_shopping.groupby(['Genre', 'Range Usia']).mean()[['Annual Income (k$)', 'Spending Score (1-100)']]
+print(group_income)
+
+# --- Visualisasi Annual Income Berdasarkan Genre dan Usia ---
+# Kode sebelumnya
+import pandas as pd
+
+dataset_shopping = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/shopping_data.csv', delimiter=',')
+
+def label_usia(row):
+    if row['Age'] < 21:
+        return 'remaja'
+    if row['Age'] < 40:
+        return 'dewasa muda'
+    if row['Age'] < 55:
+        return 'dewasa'
+    return 'pensiun'
+
+dataset_shopping['Range Usia'] = dataset_shopping.apply(lambda row: label_usia(row), axis=1)
+
+# Mengelompokkan 'Annual Income (k$)' dan 'Spending Score (1-100)' berdasarkan 'Genre' dan 'Range Usia', serta mengambil agregasinya (yaitu nilai rata-rata atau mean) berdasarkan pengelompokan tersebut
+group_income = dataset_shopping.groupby(['Genre', 'Range Usia']).mean()[['Annual Income (k$)', 'Spending Score (1-100)']].reset_index()
+
+# Pisahkan ke dalam masing-masing Genre
+male_group = group_income[group_income['Genre']=='Male']
+female_group = group_income[group_income['Genre']=='Female']
+
+# Import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+labels = group_income['Range Usia'].unique()
+x = np.arange(len(labels))
+
+fig = plt.figure(figsize=(8,8))
+# Plotkan ke dalam grouped bar chart 
+ax1 = plt.subplot(211)
+width = 0.4
+male_bar = ax1.bar(x - width/2, male_group['Annual Income (k$)'], width, label='Pria')
+female_bar = ax1.bar(x + width/2, female_group['Annual Income (k$)'], width, label='Wanita')
+
+# Menampilkan angka setiap bar
+ax1.bar_label(male_bar, padding=3, fmt='%.2f')
+ax1.bar_label(female_bar, padding=3, fmt='%.2f')
+ax1.set_xlabel('Range Usia')
+ax1.set_ylabel('Annual Income (k$)')
+ax1.set_title('Pendapatan tahunan berdasarkan kelompok usia pelanggan')
+ax1.set_xticks(x)
+ax1.set_xticklabels(labels)
+ax1.legend()
+
+# Plotkan ke dalam pie chart untuk setiap genre
+exploding = [0, 0.1, 0, 0]
+ax2 = plt.subplot(223)
+ax2.pie(male_group['Annual Income (k$)'], labels=male_group['Range Usia'], explode=exploding, autopct='%1.1f%%', startangle=90)
+ax2.set_title('Persentase pendapatan tahunan\npelanggan pria berdasarkan\nkelompok usia')
+
+ax2 = plt.subplot(224)
+ax2.pie(female_group['Annual Income (k$)'], labels=female_group['Range Usia'], explode=exploding, autopct='%1.1f%%', startangle=90)
+ax2.set_title('Persentase pendapatan tahunan\npelanggan wanita berdasarkan\nkelompok usia')
+
+plt.tight_layout()
+plt.show()
+
+# --- Visualisasi Spending Score Berdasarkan Genre dan Usia ---
+# Kode sebelumnya
+import pandas as pd
+
+dataset_shopping = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/shopping_data.csv', delimiter=',')
+
+def label_usia(row):
+    if row['Age'] < 21:
+        return 'remaja'
+    if row['Age'] < 40:
+        return 'dewasa muda'
+    if row['Age'] < 55:
+        return 'dewasa'
+    return 'pensiun'
+
+dataset_shopping['Range Usia'] = dataset_shopping.apply(lambda row: label_usia(row), axis=1)
+
+# Mengelompokkan 'Annual Income (k$)' dan 'Spending Score (1-100)' berdasarkan 'Genre' dan 'Range Usia', serta mengambil agregasinya (yaitu nilai rata-rata atau mean) berdasarkan pengelompokan tersebut
+group_income = dataset_shopping.groupby(['Genre', 'Range Usia']).mean()[['Annual Income (k$)', 'Spending Score (1-100)']].reset_index()
+
+# Pisahkan ke dalam masing-masing Genre
+male_group = group_income[group_income['Genre']=='Male']
+female_group = group_income[group_income['Genre']=='Female']
+
+# Import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+labels = group_income['Range Usia'].unique()
+x = np.arange(len(labels))
+
+fig = plt.figure(figsize=(8,8))
+# Plotkan ke dalam grouped bar chart 
+ax1 = plt.subplot(211)
+width = 0.4
+male_bar = ax1.bar(x - width/2, male_group['Spending Score (1-100)'], width, label='Pria')
+female_bar = ax1.bar(x + width/2, female_group['Spending Score (1-100)'], width, label='Wanita')
+
+# Menampilkan angka setiap bar
+ax1.bar_label(male_bar, padding=3, fmt='%.2f')
+ax1.bar_label(female_bar, padding=3, fmt='%.2f')
+ax1.set_xlabel('Range Usia')
+ax1.set_ylabel('Spending Score (1-100)')
+ax1.set_title('Skor pengeluaran berdasarkan kelompok usia pelanggan')
+ax1.set_xticks(x)
+ax1.set_xticklabels(labels)
+ax1.legend()
+
+# Plotkan ke dalam pie chart untuk setiap genre
+exploding = [0, 0.1, 0, 0]
+ax2 = plt.subplot(223)
+ax2.pie(male_group['Spending Score (1-100)'], labels=male_group['Range Usia'], explode=exploding, autopct='%1.1f%%', startangle=90)
+ax2.set_title('Persentase skor pengeluaran\npelanggan pria berdasarkan\nkelompok usia')
+
+ax2 = plt.subplot(224)
+ax2.pie(female_group['Spending Score (1-100)'], labels=female_group['Range Usia'], explode=exploding, autopct='%1.1f%%', startangle=90)
+ax2.set_title('Persentase skor pengeluaran\npelanggan wanita berdasarkan\nkelompok usia')
+
+plt.tight_layout()
+plt.show()
+
+# --- Data Penjualan ---
+# Mengimpor library pandas
+import pandas as pd
+pd.set_option('display.max_columns', 10)
+
+# Menyimpan data ke dalam dataframe
+dataset_retail = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/data_retail.csv', delimiter=';')
+print('Lima data teratas dataset_retail:')
+print('--------------------------------:')
+print(dataset_retail.head())
+
+# Mencari total jumlah penjualan dari setiap produk
+product_transaction = dataset_retail.groupby('Product').sum().reset_index()
+print('\nTotal penjualan untuk setiap produk:')
+print('-----------------------------------:')
+print(product_transaction)
+
+# --- Visualisasi Data Penjualan ---
+# Kode sebelumnya
+import pandas as pd
+
+dataset_retail = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/data_retail.csv', delimiter=';')
+
+product_transaction = dataset_retail.groupby('Product').sum().reset_index()
+
+# Mengimpor library matplotlib
+import matplotlib.pyplot as plt
+
+# Menampilkan visualisasi dari jumlah transaksi tiap produk
+fig = plt.figure(figsize=(10,5))
+
+# Plot diagram batang
+ax1 = plt.subplot(121)
+ax1.bar(product_transaction['Product'], product_transaction['Average_Transaction_Amount'])
+ax1.set_ylabel('Rata-rata jumlah transaksi\n(x 1 Milyar)')
+ax1.set_title('Total Transaksi Produk')
+
+# Plot persentase dengan pie chart
+ax2 = plt.subplot(122)
+ax2.pie(product_transaction['Average_Transaction_Amount'], labels=product_transaction['Product'], autopct='%1.1f%%', startangle=90)
+ax2.set_title('Persentase Transaksi Produk')
+
+plt.tight_layout()
+plt.show()
+
+# --- CHAPTER 3: Mini Project ---
+# --- Mini Project Part 1 ---
+# Import library pandas
+import pandas as pd
+pd.set_option('display.max_column', 10)
+
+# Membaca dan menampilkan dataset
+dataset_worldbank = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/atmajaya/worldbank.csv', delimiter=',', encoding='cp1252')
+
+# Melihat tipe data database worldbank.csv
+print('\nInformasi dataset_worldbank:')
+print('============================')
+dataset_worldbank.info()
+
+# Mengganti baris data yang kosong dengan nilai 0
+dataset_worldbank = dataset_worldbank.fillna(0)
+
+# Melihat tipe data database worldbank.csv
+print('\nInformasi dataset_worldbank setelah .fillna(0):')
+print('===============================================')
+dataset_worldbank.info()
+
+# Data worldbank dari tahun ... sampai tahun ...
+print('\nData worldbank dari tahun ... sampai tahun ...')
+print('==============================================')
+print(dataset_worldbank['year'].unique())
+
+# --- Mini Project Part 2 ---
+# Kode sebelumnya
+import pandas as pd
+
+dataset_worldbank = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/atmajaya/worldbank.csv', delimiter=',', encoding='cp1252')
+
+dataset_worldbank = dataset_worldbank.fillna(0)
+
+# Import matplotlib
+import matplotlib.pyplot as plt
+
+# GDP negara Indonesia, Malaysia, Singapore, dan Thailand
+dataset_indonesia = dataset_worldbank[dataset_worldbank['country']=='Indonesia']
+dataset_malaysia = dataset_worldbank[dataset_worldbank['country']=='Malaysia']
+dataset_singapore = dataset_worldbank[dataset_worldbank['country']=='Singapore']
+dataset_thailand = dataset_worldbank[dataset_worldbank['country']=='Thailand']
+
+fig = plt.figure(figsize=(12, 10))
+ax1 = plt.subplot(211)
+ax1.plot(dataset_indonesia['year'], dataset_indonesia['realgdppercapita'], label='Indonesia')
+ax1.plot(dataset_malaysia['year'], dataset_malaysia['realgdppercapita'], label='Malaysia')
+ax1.plot(dataset_singapore['year'], dataset_singapore['realgdppercapita'], label='Singapore')
+ax1.plot(dataset_thailand['year'], dataset_thailand['realgdppercapita'], label='Thailand')
+ax1.legend()
+ax1.grid()
+ax1.set_xlabel('Tahun')
+ax1.set_ylabel('GDP per kapita')
+ax1.set_title('GDP per Kapita untuk Empat Negara ASEAN', fontsize=14)
+
+# 20 negara dengan GDP per kapita tertinggi di tahun 2015
+dataset_2015 = dataset_worldbank[dataset_worldbank['year']==2015].nlargest(20, 'realgdppercapita')
+ax2 = plt.subplot(212)
+ax2.bar(dataset_2015['country'], dataset_2015['realgdppercapita'])
+ax2.grid(axis='y')
+ax2.set_xlabel('Negara')
+ax2.set_ylabel('GDP per kapita')
+ax2.set_title('20 Negara dengan GDP per Kapita Tertinggi di 2015', fontsize=14)
+plt.xticks(rotation=90)
+
+plt.tight_layout()
+plt.show()
