@@ -34,6 +34,7 @@ plt.tight_layout(rect=(0,0,1,0.88))
 plt.show()
 
 # --- Visualisasi Data 2 ---
+# --- Visualisasi - Part 2: Matplotlib ---
 import pandas as pd
 import matplotlib.pyplot as plt
 
