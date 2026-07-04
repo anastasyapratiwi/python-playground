@@ -1,1 +1,153 @@
+# Profil Pemateri: Galuh Sahid, Data Scientist, GoJek
 
+# --- CHAPTER 1: Pengenalan ---
+# --- Pengantar ---
+from plotnine import *
+
+# --- Meng-import Package ---
+import matplotlib.pyplot as plt
+import plotnine as p9
+import pandas as pd
+
+# --- Membaca Data ---
+import pandas as pd
+df_penduduk = pd.read_csv("https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv")
+df_inflasi = pd.read_csv("https://dqlabcdn.xeratic.com/dqlab-dataset/inflasi.csv")
+
+# --- CHAPTER 2: Mulai Membuat Plot Sederhana ---
+# --- Menampilkan Data ---
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+print(df_penduduk.head())
+
+# --- Menjalankan Fungsi ggplot ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+ggplot(data=df_penduduk).draw()
+plt.show()
+
+# --- Menambahkan Variabel ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+(ggplot(data=df_penduduk)
++ aes(x='NAMA KABUPATEN/KOTA', y='JUMLAH')
+).draw()
+plt.show()
+
+# --- Mendefinisikan Objek Geometris ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+(ggplot(data=df_penduduk)
++ aes(x='NAMA KABUPATEN/KOTA', y='JUMLAH')
++ geom_col()
+).draw()
+plt.show()
+
+# --- Membuat Horizontal Bar Chart ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+(ggplot(data=df_penduduk)
++ aes(x='NAMA KABUPATEN/KOTA', y='JUMLAH')
++ geom_col()
++ coord_flip()
+).draw()
+plt.tight_layout()
+plt.show()
+
+# --- Menambah Judul dan Mengubah Label ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import plotnine
+import pandas as pd
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+plotnine.options.figure_size=(12, 4.8)
+(ggplot(data=df_penduduk)
++ aes(x='NAMA KABUPATEN/KOTA', y='JUMLAH')
++ geom_col()
++ coord_flip()
++ labs(title='Jumlah penduduk per kabupaten/kota di DKI Jakarta (2013)',
+x='Kabupaten/Kota',
+y='Jumlah Penduduk')
+).draw()
+plt.tight_layout(rect=[0,0,1,0.9])
+plt.show()
+
+# --- Menampilkan Warna Berbeda ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import plotnine
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+plotnine.options.figure_size=(10, 3.6)
+(ggplot(data=df_penduduk)
++ aes(x='NAMA KABUPATEN/KOTA', y='JUMLAH', fill='JENIS KELAMIN')
++ geom_col()
++ coord_flip()
++ labs(title='Jumlah penduduk per kabupaten/kota di DKI Jakarta (2013)',
+x='Kabupaten/Kota',
+y='Jumlah Penduduk')
+).draw()
+plt.tight_layout(rect=[0,0,1,0.9])
+plt.show()
+
+# --- Membuat Grafik dengan Variabel Berbeda ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import plotnine
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+plotnine.options.figure_size=(14, 3.6)
+(ggplot(data=df_penduduk[df_penduduk['NAMA KECAMATAN'] == 'CENGKARENG'])
++ aes(x='NAMA KELURAHAN', y='JUMLAH', fill='JENIS KELAMIN')
++ geom_col()
++ coord_flip()
++ labs(title='Jumlah penduduk per kelurahan di Kecamatan Cengkareng (2013)',
+x='Kelurahan',
+y='Jumlah Penduduk')
+).draw()
+plt.tight_layout(rect=[0,0,1,0.9])
+plt.show()
+
+# --- Memisahkan Grafik ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import plotnine
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+plotnine.options.figure_size=(10, 3.6)
+(ggplot(data=df_penduduk[df_penduduk['NAMA KECAMATAN'] == 'CENGKARENG'])
++ aes(x='NAMA KELURAHAN', y='JUMLAH', fill='JENIS KELAMIN')
++ geom_col(position = position_dodge)
++ coord_flip()
++ labs(title='Jumlah penduduk per kelurahan di DKI Jakarta (2013)',
+x='Kelurahan',
+y='Jumlah Penduduk')
+).draw()
+plt.tight_layout(rect=[0,0,1,0.9])
+plt.show()
