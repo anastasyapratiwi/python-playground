@@ -208,3 +208,123 @@ print(data_dummy_produk)
 
 # --- Chapter 3: Data Visualisasi Part 2 ---
 # --- Matriks Korelasi ---
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+raw_data = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv", sep=';')
+plt.clf()
+
+# mengatur ukuran gambar/plot
+plt.rcParams['figure.dpi'] = 100
+
+plt.figure()
+plt.matshow(raw_data.corr(numeric_only=True))
+plt.title('Plot correlation matriks dengan .matshow', size=14)
+plt.tight_layout()
+plt.show()
+
+plt.figure()
+sns.heatmap(raw_data.corr(numeric_only=True), annot=True)
+plt.title('Plot correlation matriks dengan sns.heatmap', size=14)
+plt.tight_layout()
+plt.show()
+
+# --- Grouped Box Plot ---
+import pandas as pd
+import matplotlib.pyplot as plt
+raw_data = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv", sep=';')
+plt.clf()
+
+plt.figure()
+# boxplot biasa tanpa pengelompokkan
+raw_data.boxplot(rot=90)
+plt.title('Boxplot tanpa pengelompokkan', size=14)
+plt.tight_layout()
+plt.show()
+
+plt.figure()
+# box plot dengan pengelompokkan dilakukan oleh kolom 'Produk'
+raw_data.boxplot(by='Produk')
+plt.tight_layout()
+plt.show()
+
+# --- Grouped Histogram ---
+import pandas as pd
+import matplotlib.pyplot as plt
+raw_data = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv", sep=';')
+plt.clf()
+
+plt.figure()
+raw_data[raw_data['Produk'] == 'A'].hist()
+plt.tight_layout()
+plt.show()
+
+plt.figure()
+raw_data[raw_data['Produk'] == 'B'].hist()
+plt.tight_layout()
+plt.show()
+
+plt.figure()
+raw_data[raw_data['Produk'] == 'C'].hist()
+plt.tight_layout()
+plt.show()
+
+plt.figure()
+raw_data[raw_data['Produk'] == 'D'].hist()
+plt.tight_layout()
+plt.show()
+
+plt.figure()
+raw_data[raw_data['Produk'] == 'E'].hist()
+plt.tight_layout()
+plt.show()
+
+# --- Hex Bin Plot -> .plot.hexbin() ---
+import pandas as pd
+import matplotlib.pyplot as plt
+raw_data = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv", sep=';')
+plt.clf()
+
+plt.figure()
+raw_data.plot.hexbin(x='Pendapatan', y='Total', gridsize=25, rot=90)
+plt.tight_layout()
+plt.show()
+
+# --- Scatter Matrix Plot ---
+from pandas.plotting import scatter_matrix
+import pandas as pd
+import matplotlib.pyplot as plt
+raw_data = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv", sep=';')
+plt.clf()
+
+_, ax = plt.subplots(1, 1, figsize=(10,10))
+scatter_matrix(raw_data, ax=ax)
+plt.show()
+
+# --- Chapter 4: Regresi Linier Sederhana ---
+# --- Regresi Linier Sederhana Menggunakan Statsmodel ---
+# 1. Membuat dataset dari file dengan format .csv. Menampilkan dataset (https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv)
+# Load beberapa library
+import pandas as pd
+import statsmodels.api as sm
+
+# Load dataset
+raw_data = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv", sep=';')
+
+# Cetak data
+print(raw_data) # Lalu akan muncul isi dari dataset yang dipanggil.
+
+# 2. Kita akan mengambil variabel 'Total' sebagai variabel tak bebas dan variabel 'Pendapatan' sebagai variabel bebas. Untuk menambahkan membentuk model yang disertai dengan intercept, kita harus menggunakan method .add_constant() untuk variabel bebas
+# Variabel tak bebas
+nilai_Y = raw_data[["Total"]]
+
+# Variabel bebas
+nilai_X = sm.add_constant(raw_data[["Pendapatan"]])
+
+# 3. Selanjutnya kita dapat menggunakan method .OLS untuk membuat model regresi linier sederhana dengan memasukkan parameter endog=variabel_tak_bebas dan exog=variabel_bebas, disambung dengan method .fit():
+# Membuat model regresi linier
+model_regresi = sm.OLS(endog=nilai_Y, exog=nilai_X).fit()
+
+# 4. Untuk melihat hasil dari model kita dapat menggunakan method .summary() sebagaimana contoh berikut :
+# Cetak laporan dari variabel model_regresi
+print(model_regresi.summary())
