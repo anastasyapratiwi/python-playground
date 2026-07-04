@@ -485,3 +485,185 @@ print(kata_positif_jeruk)
 print(kata_positif_salak)
 
 # --- Chapter 3: Functions ---
+# --- Fungsi Pertama (contoh_fungsi) ---
+# Definisikan fungsi
+def contoh_fungsi():
+    print("Halo Dunia")
+    print("Aku sedang belajar bahasa Python")
+# Panggil fungsi yang telah didefinisikan
+contoh_fungsi()
+
+# --- Fungsi Kedua (fungsi_dengan_argumen membutuhkan dua argumen (nama_depan, nama_belakang)) ---
+# Definsikan fungsi 
+def fungsi_dengan_argumen(nama_depan, nama_belakang):
+    print(nama_depan+" "+nama_belakang)
+# Panggil fungsi dengan memasukkan argumen
+# nama_depan yaitu "John" dan nama_belakang "Doe"
+fungsi_dengan_argumen("John", "Doe")
+
+# --- Fungsi Ketiga ---
+# Definsikan fungsi dengan nilai default argument kedua adalah "".
+def fungsi_dengan_argumen(nama_depan, nama_belakang = ""):
+	print(nama_depan+" "+nama_belakang)
+# Panggil fungsi dengan memasukkan argumen nama_depan "John"
+fungsi_dengan_argumen("John")
+# Panggil fungsi dengan memasukkan argumen
+# nama_depan yaitu "John" dan nama_belakang "Doe"
+fungsi_dengan_argumen("John", "Doe")
+
+# --- Tugas Praktik ---
+# Dua buah data yang tersimpan dalam tipe list
+data1 = [70, 70, 70, 100, 100, 100, 120, 120, 150, 150]
+data2 = [50, 60, 60, 50, 70, 70, 100, 80, 100, 90]
+
+# Definisikan fungsi hitung_rata_rata
+def hitung_rata_rata(data):
+    jumlah = 0
+    for item in data:
+        jumlah += item # Setiap angka dalam data ditambahkan ke 'jumlah'
+    rata_rata = jumlah/len(data) # Total dibagi banyaknya data
+    return rata_rata
+
+# Hitung nilai rata-rata dari kedua data yang dimiliki
+print('Rata-rata data1:')
+print(hitung_rata_rata(data1))
+print('Rata-rata data2:')
+print(hitung_rata_rata(data2))
+
+# Dua buah data yang tersimpan dalam tipe list
+data1 = [70, 70, 70, 100, 100, 100, 120, 120, 150, 150]
+data2 = [50, 60, 60, 50, 70, 70, 100, 80, 100, 90]
+
+# Fungsi rata-rata data
+def hitung_rata_rata(data):
+    jumlah = 0
+    for item in data:
+        jumlah += item
+    rata_rata = jumlah/len(data)
+    return rata_rata
+  
+# Definisikan fungsi hitung_standar_deviasi
+def hitung_standar_deviasi(data):
+    rata_rata_data = hitung_rata_rata(data)
+    varians = 0
+    for item in data:
+        varians += (item - rata_rata_data) ** 2 # Selisihnya itu dikuadratkan (biar kalau hasilnya minus tetep jadi positif).
+    varians /= len(data) # mencari "Rata-rata dari kuadrat selisih". Baris ini hukumnya WAJIB karena: Kalau nggak dibagi, cuma punya "Total Kesalahan". Setelah dibagi, Mbak punya "Rata-rata Kesalahan" (Varians).
+    standar_deviasi = varians ** (1/2) # Karena tadi sempat dikuadratkan, sekarang "dinetralin" lagi pakai akar kuadrat ($1/2$ itu sama dengan akar).
+    return standar_deviasi
+
+# Hitung nilai standar deviasi dari kedua data yang dimiliki
+print('Standar deviasi data1:')
+print(hitung_standar_deviasi(data1))
+print('Standar deviasi data2:')
+print(hitung_standar_deviasi(data2))
+
+# --- Tugas Praktik (Tabel Properti) ---
+# Data properti
+tabel_properti = {
+'luas_tanah': [70, 70, 70, 100, 100, 100, 120, 120, 150, 150],
+'luas_bangunan': [50, 60, 60, 50, 70, 70, 100, 80, 100, 90],
+'jarak': [15, 30, 55, 30, 25, 50, 20, 50, 50, 15],
+'harga': [500, 400, 300, 700, 1000, 650, 2000, 1200, 1800, 3000]
+}
+
+# Fungsi rata-rata data
+def hitung_rata_rata(data):
+    jumlah = 0
+    for item in data:
+        jumlah += item
+    rata_rata = jumlah/len(data)
+    return rata_rata
+
+# Fungsi hitung_standar_deviasi
+def hitung_standar_deviasi(data):
+    rata_rata_data = hitung_rata_rata(data)
+    varians = 0
+    for item in data:
+        varians += (item - rata_rata_data) ** 2
+        varians /= len(data)
+    standar_deviasi = varians ** (1/2)
+    return standar_deviasi
+
+# Definisikan fungsi untuk menghitung rata-rata dan standar deviasi
+# setiap kolom pada tabel_properti yang diberikan oleh key dict.
+def deskripsi_properti(tabel):
+    for key in tabel.keys(): # Fungsi .keys() itu gunanya cuma buat ngambil semua daftar Label yang tertempel di depan laci-laci tadi, tanpa ngelihat isinya dulu.
+        print('Rata-rata ' + key + ':')
+        print(hitung_rata_rata(tabel[key])) # Si key itu cuma nama variabel sementara pas lagi muter (looping).
+        print('Standar deviasi ' + key + ':')
+        print(hitung_rata_rata(tabel[key]))
+        print('')
+
+# Panggil fungsi deskripsi_properti untuk menghitung rata-rata 
+# dan standar deviasi setiap kolom pada tabel_properti
+deskripsi_properti(tabel_properti)
+
+# --- Chapter 4: Manipulasi Berkas Teks dan Library Matematika pada Python ---
+import requests
+url = "https://storage.googleapis.com/dqlab-dataset/hello.txt"
+response = requests.get(url)
+
+# --- Membaca Berkas Teks – Part 1 ---
+# A1. Membaca file hello.txt dengan fungsi read() dan menutup file
+# Membaca file hello.txt dengan fungsi read()
+print(">>> Membaca file hello.txt dengan fungsi read()")
+file = open("hello.txt", "r")
+content = file.read()
+
+file.close()
+print(content)
+
+# A2. Membaca file hello.txt dengan fungsi readline()
+print(">>> Membaca file hello.txt dengan fungsi readline()")
+file = open("hello.txt", "r")
+
+first_line = file.readline()
+second_line = file.readline() 
+
+file.close()
+print(first_line)
+print(second_line)
+
+# --- Tugas Praktik ---
+import requests
+url = "https://storage.googleapis.com/dqlab-dataset/hello.txt"
+response = requests.get(url)
+
+# Cetak kode status dari response
+print(response) # kode status HTTP 200 = OK dari url tempat file disimpan
+
+# Cetak isi file hello.txt menggunakan method response.iter_lines()
+print("\n>> Cetak isi file hello.txt menggunakan method response.iter_lines():")
+for baris in response.iter_lines():
+	print(baris)
+
+# --- Membaca Berkas Teks – Part 2 ---
+# A1. Membaca file hello.txt dengan fungsi readlines()
+print(">>> Membaca file hello.txt dengan fungsi readlines()")
+file = open("hello.txt", "r")
+
+all_lines = file.readlines()
+file.close()
+print(all_lines)
+
+# A2. Membaca file hello.txt dengan menerapkan looping (for loops)
+print(">>> Membaca file hello.txt dengan menerapkan looping")
+file = open("hello.txt", "r")
+
+for line in file:
+	print(line)
+file.close()
+
+# --- Tugas Praktik ---
+import requests
+url = "https://storage.googleapis.com/dqlab-dataset/hello.txt"
+response = requests.get(url)
+
+# Cetak kode status dari response
+print(response)
+
+# Cetak isi file hello.txt menggunakan atribut response.text
+print("\n>> Cetak isi file hello.txt menggunakan atribut response.text:")
+print(response.text) 
+
