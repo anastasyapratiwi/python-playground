@@ -151,3 +151,118 @@ y='Jumlah Penduduk')
 ).draw()
 plt.tight_layout(rect=[0,0,1,0.9])
 plt.show()
+
+# --- CHAPTER 3: Mengenal Berbagai Geom ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+df_penduduk_luas_jumlah = df_penduduk.groupby(['NAMA KELURAHAN', 'LUAS WILAYAH (KM2)'])['JUMLAH'].agg('sum').reset_index()
+
+(ggplot(data=df_penduduk_luas_jumlah)
++ aes(x='JUMLAH', y='LUAS WILAYAH (KM2)')
++ geom_point()
+).draw()
+plt.show()
+
+# --- Memberi Warna pada Scatterplot ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import plotnine
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+df_penduduk_luas_jumlah = df_penduduk.groupby(['NAMA KELURAHAN', 'LUAS WILAYAH (KM2)'])[['JUMLAH']].agg('sum').reset_index()
+
+plotnine.options.figure_size=(10, 3.6)
+(ggplot(data=df_penduduk_luas_jumlah)
++ aes(y='LUAS WILAYAH (KM2)', x='JUMLAH', color='JUMLAH')
++ geom_point()
+).draw()
+plt.show()
+
+# --- Membuat Histogram ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+(ggplot(data=df_penduduk)
++ aes(x='LUAS WILAYAH (KM2)')
++ geom_histogram()
+).draw()
+plt.show()
+
+# --- Membuat Histogram 2 ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+(ggplot(data=df_penduduk)
++ aes(x='LUAS WILAYAH (KM2)', y='stat(count/max(count))')
++ geom_histogram()
+).draw()
+plt.show()
+
+# --- Membuat Boxplot ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_penduduk = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/datakependudukandki-dqlab.csv')
+
+(ggplot(data=df_penduduk)
++ aes(x='NAMA KABUPATEN/KOTA', y='JUMLAH')
++ geom_boxplot()
++ coord_flip()
+).draw()
+plt.tight_layout()
+plt.show()
+
+# --- Membuat Line Chart ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_inflasi = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/inflasi.csv')
+df_inflasi['Bulan'] = pd.to_datetime(df_inflasi['Bulan'])
+
+(ggplot(data=df_inflasi[df_inflasi['Negara']=='Indonesia'])
++ aes(x='Bulan', y='Inflasi')
++ geom_line()
+).draw()
+plt.show()
+
+# --- Membuat 2 Line Chart ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import plotnine
+import pandas as pd 
+
+df_inflasi = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/inflasi.csv')
+df_inflasi['Bulan'] = df_inflasi['Bulan'].astype('datetime64')
+
+plotnine.options.figure_size=(12, 3.6)
+(ggplot(data=df_inflasi)
++ aes(x='Bulan', y='Inflasi', color='Negara')
++ geom_line()
+).draw()
+plt.show()
+
+# --- Mengubah Ukuran Plot ---
+import matplotlib.pyplot as plt
+from plotnine import *
+import pandas as pd 
+
+df_inflasi = pd.read_csv('https://dqlabcdn.xeratic.com/dqlab-dataset/inflasi.csv')
+df_inflasi['Bulan'] = df_inflasi['Bulan'].astype('datetime64')
+
+(ggplot(data=df_inflasi)
++ aes(x='Bulan', y='Inflasi', color='Negara')
++ geom_line()
++ theme(figure_size=(10, 5))
+).draw()
+plt.show()
