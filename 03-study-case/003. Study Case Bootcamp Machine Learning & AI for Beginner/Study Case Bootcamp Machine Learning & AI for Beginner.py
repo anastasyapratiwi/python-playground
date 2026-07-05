@@ -16,3 +16,6 @@ df = df.dropna()
 
 # Tampilkan berapa baris dan kolom sisa dari data yang sudah didrop
 print(df.shape)
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
