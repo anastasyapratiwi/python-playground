@@ -793,3 +793,6 @@ for i, measurement in enumerate(groupby_city_province.columns):
 # Adjust the layout and show the plot
 plt.tight_layout()
 plt.show()
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
