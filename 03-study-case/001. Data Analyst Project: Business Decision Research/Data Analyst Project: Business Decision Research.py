@@ -390,3 +390,6 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 print('Accuracy :', accuracy_score(y_test, y_pred))
 print('Precision:', precision_score(y_test, y_pred, average='micro'))
 print('Recall   :', recall_score(y_test, y_pred, average='micro'))
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
