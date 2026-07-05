@@ -11,3 +11,6 @@ df[['First_Name', 'Last_Name']] = df['Customer_Name'].str.split(' ', n=1, expand
 
 # tampilkan 5 baris pertama
 print(df.head())
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
