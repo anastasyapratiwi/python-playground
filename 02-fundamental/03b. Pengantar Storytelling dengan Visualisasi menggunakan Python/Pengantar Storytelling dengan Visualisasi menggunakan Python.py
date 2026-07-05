@@ -432,3 +432,6 @@ plt.xticks(rotation=90)
 
 plt.tight_layout()
 plt.show()
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
