@@ -576,3 +576,6 @@ plt.ylabel('Quantity',fontsize = 12)
 plt.xlim(xmin=0,xmax=2000000)
 plt.ylim(ymin=0,ymax=250)
 plt.show()
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
