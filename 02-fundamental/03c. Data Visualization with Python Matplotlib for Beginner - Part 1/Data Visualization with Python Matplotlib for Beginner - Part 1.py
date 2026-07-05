@@ -276,3 +276,6 @@ plt.ylabel('Number of Customers', fontsize=15, color='blue')
 plt.grid(color='darkgray', linestyle=':', linewidth=0.5)
 plt.ylim(ymin=0)
 plt.show()
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
