@@ -266,3 +266,6 @@ df_inflasi['Bulan'] = df_inflasi['Bulan'].astype('datetime64')
 + theme(figure_size=(10, 5))
 ).draw()
 plt.show()
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
