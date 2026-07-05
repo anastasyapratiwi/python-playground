@@ -125,3 +125,6 @@ print(std_value.sort_values())
 # penjualan tersebut dengan bins = 5 dan figsize= (4,5)
 order_df[["quantity"]].hist(figsize=(4, 5), bins=5)
 plt.show()
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
