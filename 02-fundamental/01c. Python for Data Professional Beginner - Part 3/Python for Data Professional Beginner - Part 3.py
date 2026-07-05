@@ -582,3 +582,6 @@ perusahaan.aktifkan_karyawan(febi)
 
 # Cetak keseluruhan total pengeluaran perusahaan
 print(perusahaan.total_pengeluaran())
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
