@@ -700,4 +700,7 @@ print(cm)
 # Apply classification_report function to y_test and y_pred
 print("Classification report:")
 cr = classification_report(y_test, y_pred)
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
 print(cr)
