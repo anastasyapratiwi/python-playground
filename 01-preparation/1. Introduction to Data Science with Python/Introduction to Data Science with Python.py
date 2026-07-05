@@ -63,3 +63,6 @@ import math
 import numpy as np
 import pandas as pd
 import seaborn as sns
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
