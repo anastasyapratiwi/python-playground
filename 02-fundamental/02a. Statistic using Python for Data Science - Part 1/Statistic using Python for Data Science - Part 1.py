@@ -249,3 +249,6 @@ print (raw_data.corr(method='kendall', numeric_only=True))
  
 # mencari korelasi 'spearman' untuk tiap pasang variabel
 print (raw_data.corr(method='spearman', numeric_only=True))
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
