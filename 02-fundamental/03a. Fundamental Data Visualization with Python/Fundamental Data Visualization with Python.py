@@ -90,3 +90,6 @@ ax.get_legend().remove() # Hapus legend bawaan karena sudah di-annotate manual
 
 plt.tight_layout(rect=(0,0,1,0.90))
 plt.show()
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
