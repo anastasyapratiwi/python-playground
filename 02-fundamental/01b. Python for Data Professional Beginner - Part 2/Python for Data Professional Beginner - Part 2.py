@@ -888,3 +888,6 @@ data = transform_data(data, attr_info)
 # Hitunglah prediksi harga dari variabel data tersebut.
 harga = price_based_on_similarity(data, harga_rumah)
 print("Prediksi harga rumah: ", harga)
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
