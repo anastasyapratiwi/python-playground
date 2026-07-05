@@ -328,3 +328,6 @@ model_regresi = sm.OLS(endog=nilai_Y, exog=nilai_X).fit()
 # 4. Untuk melihat hasil dari model kita dapat menggunakan method .summary() sebagaimana contoh berikut :
 # Cetak laporan dari variabel model_regresi
 print(model_regresi.summary())
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
