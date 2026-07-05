@@ -360,3 +360,6 @@ plt.ylabel("Jumlah Penduduk Laki-Laki")
 plt.title("Persebaran Jumlah Penduduk Laki-Laki di Jakarta Pusat")
 
 plt.show()
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
