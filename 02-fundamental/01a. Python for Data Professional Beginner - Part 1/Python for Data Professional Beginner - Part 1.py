@@ -631,3 +631,6 @@ while i <= jumlah_hari: # hari ke-1 sampai hari ke-31. Jadi batasnya adalah juml
 
 # Cetak total pengeluaran
 print(total_pengeluaran)
+
+# -- Note: For my certificates of completion, check README.md
+# -- Thank you.
