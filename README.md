@@ -8,11 +8,11 @@ This overview contains:
 3. CERTIFICATES OF COMPLETION
 4. CONTACT
 
-# -- 1. INTRODUCTION --
+## 1. INTRODUCTION
 
-# -- 2. WHY PYTHON? --
+## 2. WHY PYTHON?
 
-# -- 3. CERTIFICATES OF COMPLETION --
+## 3. CERTIFICATES OF COMPLETION
 
 Platform: DQLab (https://dqlab.id/)
 
@@ -59,7 +59,7 @@ Platform: DQLab (https://dqlab.id/)
 <img width="1754" height="1241" alt="21  Anastasya Pratiwi_Introduction to Data Science with Python" src="https://github.com/user-attachments/assets/213aab61-116f-4c1c-b2fa-0a509dc79b1b" />
 
 
-# -- 4. CONTACT --
+## 4. CONTACT
 
 ~ Email: anastasyapratiwi.work@gmail.com
 
