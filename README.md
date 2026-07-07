@@ -10,7 +10,20 @@ This overview contains:
 
 ## 1. INTRODUCTION
 
+Hello everyone, my name is Anastasya Pratiwi. People around me usually call me Tasya. My nationality is Indonesian. I'm a food technology graduate and writer.
+
+I accidentally stumbled into Python thanks to the DQLab Content Writer Challenge back in November 2025 about Artificial Intelligence (AI). After being selected in the Top 100 nationally, I realize that if I want to continue to write about data, I have to dive more. 
+
+My learning journey started in February 2026 but has been getting more intensive since April. 
+
+This GitHub repository is the collection of what I've got so far. Usually, I use VS Code. At the time I was writing this (July 2026), GitHub is still a new place and environment for me. I can say the same thing about coding. Challenging, imperfect — but on top of all that, it's an incredible journey.
+
+Hopefully, I can update this repository along the way. Thank you for being one of my witnesses. Wish you so many great things in life!
+
 ## 2. WHY PYTHON?
+Python is like a Swiss Army knife. A multifunctional tool for all. Every data analyst, data scientist, machine learning (ML) engineer, AI engineer, and data engineer needs it. There's a specific job based on this programming language: Python developer.
+
+Massive libraries and studies for their developments across the world's top universities solidify Python's reputation as one of the most in-demand skills in the present and future. Big data that can't be analyzed using Excel, the algorithm of your social media timeline and e-commerce apps, spam detection in your e-mail, and AI chatbots that you usually use are only a few examples of how prominent the use of Python is in our daily lives.
 
 ## 3. CERTIFICATES OF COMPLETION
 
