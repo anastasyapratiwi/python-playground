@@ -129,9 +129,18 @@ bill = expenses + tip
 print("Total bill:"), bill
 
 # -- Activity 6 --
-
+expenses = 54
+people = 2
+if people > 6:
+  percentage = 0.10
+elif people >= 15:
+  percentage = 0.15
+else:
+  percentage = 0
+tip = expenses * percentage
+bill = expenses + tip
+print "Total bill:", bill
 
 # -- Tips from Mr. Wermelinger --
 # 1. Usually there are many ways to solve the same problem
 # 2. The order in which we write the conditions is important, because the computer checks them from top to bottom and executes only one block, for the first condition that is true. The else block has no condition, so it’s a ‘catch all’ in case no condition is true.
-# 3. 
