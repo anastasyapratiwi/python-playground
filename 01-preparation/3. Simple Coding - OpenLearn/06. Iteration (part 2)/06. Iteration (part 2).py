@@ -1,4 +1,12 @@
+"""
+Simple Coding - OpenLearn
+Chapter 06. Iteration (part 2)
 
+Instructor:
+Michel Wermelinger
+Faculty of Mathematics, Computing and Technology
+Open University
+"""
 
 # - Example -
 expenses = 0
@@ -83,3 +91,6 @@ while n != m:
   else:
     n = n - m
 print("Their greatest common divisor is"), m
+
+# -- For my Statement of participation from OpenLearn (part of Open University), check README.md. --
+# -- Thank you. --
