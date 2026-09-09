@@ -11,6 +11,7 @@ Open University
 
 # -- 1. Activity 1 --
 result = 3 + "7"
+print("The sum of 3 and 7 is:"), result
 # Output: type error (adding number to a string)
 
 # -- 2. Activity 2 --
