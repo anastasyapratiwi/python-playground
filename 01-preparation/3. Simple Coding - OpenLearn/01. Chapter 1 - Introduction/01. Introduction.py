@@ -23,5 +23,5 @@ if people > 6:
 else:
     percentage = 0
 tip = expenses * percentage
-bill = expenses * tip
+bill = expenses + tip
 print("Total Bill:"), bill
