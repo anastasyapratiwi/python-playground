@@ -27,11 +27,18 @@ Massive libraries and studies for their developments across the world's top univ
 
 ## 3. CERTIFICATES OF COMPLETION
 
-Platform: DQLab (https://dqlab.id/)
+Platforms: 
+1. DQLab: https://dqlab.id/
+2. OpenLearn (part of Open University): https://www.open.edu/openlearn/
 
 <img width="3508" height="2481" alt="1  Anastasya Pratiwi_Data Analyst Python Track" src="https://github.com/user-attachments/assets/50201643-b415-47ff-b4ca-04405f6b0c2b" />
 
 <img width="2339" height="1654" alt="2  Anastasya Pratiwi_Data Analyst Project Business Decision Research" src="https://github.com/user-attachments/assets/febec555-346f-4d97-a019-f71f0d5b390f" />
+
+<img width="1241" height="1754" alt="Anastasya Pratiwi_Simple Coding_page-0001" src="https://github.com/user-attachments/assets/395a7bb4-571f-4ccb-b593-cf01c3fcb72f" />
+
+<img width="1241" height="1754" alt="Anastasya Pratiwi_Simple Coding_page-0002" src="https://github.com/user-attachments/assets/8e3e5a9c-9bff-4ff1-9a42-16c6115b1ce8" />
+
 
 <img width="2339" height="1654" alt="3  Anastasya Pratiwi_Study Case Bootcamp Machine learning  AI for Beginner" src="https://github.com/user-attachments/assets/17714976-c154-4799-8099-345bc1b38f0e" />
 
