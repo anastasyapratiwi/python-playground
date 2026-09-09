@@ -28,6 +28,24 @@ year = input(2001)
 print("Your age is"), 2026 - year
 
 # -- 5.2 Conversion function --
+# - Example -
+answer = input("In what year were you born?")
+year = int(2001)
+print("Your age is"), 2026 - year
+
+# -- Activity 8 --
+expenses = 54
+answer = input("How many people?")
+people = int(answer)
+if people >= 15:
+  percentage = 0.15
+elif people > 6:
+  percentage = 0.10
+else:
+  percentage = 0
+tip = expenses * percentage
+bill = expenses + tip
+print("Total bill:"), bill
 
 # -- Tips from Mr. Wermelinger --
 """
