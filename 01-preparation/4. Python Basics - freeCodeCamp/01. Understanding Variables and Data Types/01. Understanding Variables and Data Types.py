@@ -23,3 +23,34 @@ x = 56 # What do you mean by x?
 # This is a
 # multi-line
 # comment
+
+# -- B. How Does the Print Function Work? --
+# 1. A common first program display
+print('Hello world!') # Hello world!
+
+# 2. Show multiple values or arguments
+print('My favorite colors are', 'blue', 'green', 'red')
+# Output: My favorite colors are blue green red
+
+# -- C. What Are Common Data Types in Python? --
+name = 'John Doe' # Python knows this is a string
+age = 25 # Python knows this is an integer
+
+# 1. Assigned a variable to a different type
+age = 25
+age = 'Twenty-five'
+
+# 2. Integer (whole number without decimals)
+my_integer_var = 10
+print('Integer:', my_integer_var) # Integer: 10
+
+# 3. Float (number with a decimal point)
+my_float_var = 4.50
+print('Float:', my_float_var) # Float 4.5
+
+# 4. String (characters enclosed in single or double quotation marks)
+my_string_var = 'hello'
+
+# 5. Boolean (True or False)
+my_boolean_var = True
+print('Boolean:', my_boolean_var) # Boolean: True
