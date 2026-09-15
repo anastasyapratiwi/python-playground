@@ -58,7 +58,7 @@ greeting = 'hi'
 greeting[0] = 'H' # TypeError: 'str' object does not support item assignment
 
 # -- B. What Are String Concatenation and String Interpolation? --
-# 1. Concatenating Strings (+)
+# 1. String Concatenation (+)
 my_str_1 = 'Hello'
 my_str_2 = "World"
 
@@ -102,3 +102,46 @@ print(name_and_age) # My name is John Doe and I am 26 years old
 num1 = 5
 num2 = 10
 print(f'The sum of {num1} and {num2} is {num1 + num2}') # The sum of 5 and 10 is 15
+
+# -- C. What Is String Slicing and How Does It Work? --
+my_str = "Hello world"
+
+print(my_str[0]) # H
+print(my_str[6]) # w
+print(my_str[-1]) # d
+
+# Basic syntax of String slicing (extract a specific part)
+# string[start:stop]
+
+# - 1. Extract characters (separate with a colon) -
+my_str = 'Hello world'
+print(my_str[1:4]) # ell
+
+# - 2. Omit to default [0] -
+# a. Omit the start index
+my_str = 'Hello world'
+print(my_str[:7]) # Hello w
+
+# b. Omit the stop index
+my_str = 'Hello world'
+print(my_str[8:])
+
+# Slicing doesn't modify
+my_str = 'Hello world'
+print(my_str[8:]) # rld
+print(my_str) # Hello world
+
+# c. Omit the start and stop indices --> extract the whole string
+my_str = 'Hello world'
+print(my_str[:]) # Hello world
+
+# - 3. Optional: step parameter -
+# string[start:stop:step]
+
+# a. Example (start index 0, stops before 11, and extract every second character)
+my_str = 'Hello world'
+print(my_str[0:11:2]) # Hlowrd
+
+# b. Reverse a string by setting step to -1, omit both start and stop indices
+my_str = 'Hello world'
+print(my_str[::-1]) # dlrow olleH
