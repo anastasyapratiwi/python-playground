@@ -145,3 +145,74 @@ print(my_str[0:11:2]) # Hlowrd
 # b. Reverse a string by setting step to -1, omit both start and stop indices
 my_str = 'Hello world'
 print(my_str[::-1]) # dlrow olleH
+
+# -- D. What Are Some Common String Methods? --
+# 1. .upper(): Converts all characters to uppercase
+my_str = 'hello world'
+uppercase_my_str = my_str.upper()
+print(uppercase_my_str) # HELLO WORLD
+
+# 2. .lower(): Converts all characters to lowercase
+my_str = 'Hello World'
+lowercase_my_str = my_str.lower()
+print(lowercase_my_str) # hello world
+
+# 3. .strip()
+my_str = '  hello world  '
+trimmed_my_str = my_str.strip()
+print(trimmed_my_str) # "hello world"
+
+# 4. .replace(old, new)
+my_str = 'hello world'
+replaced_my_str = my_str.replace('hello', 'hi')
+print(replaced_my_str) # hi world
+
+# 5. .split(separator)
+my_str = 'hello world'
+split_words = my_str.split()
+print(split_words) # ['hello', 'world']
+
+# 6. .join()
+my_list = ['hello', 'world']
+joined_my_str = ' '.join(my_list)
+print(joined_my_str) # hello world
+
+# 7. .startswith(prefix)
+my_str = 'hello world'
+starts_with_hello = my_str.startswith('hello')
+print(starts_with_hello) # True
+
+# 8. .endswith(suffix)
+my_str = 'hello world'
+ends_with_world = my_str.endswith('world')
+print(ends_with_world) # True
+
+# 9. .find(substring)
+my_str = 'hello world'
+world_index = my_str.find('world')
+print(world_index) # 6
+
+# 10. .count(substring)
+my_str = 'hello world'
+o_count = my_str.count('o')
+print(o_count) # 2
+
+# 11. .capitalize()
+my_str = 'hello world'
+capitalized_my_str = my_str.capitalize()
+print(capitalized_my_str) # Hello world
+
+# 12. .isupper()
+my_str = 'hello world'
+is_all_upper = my_str.isupper()
+print(is_all_upper) # False
+
+# 13. .islower()
+my_str = 'hello world'
+is_all_lower = my_str.islower()
+print(is_all_lower) # True
+
+# 14. .title()
+my_str = 'hello world'
+title_case_my_str = my_str.title()
+print(title_case_my_str) # Hello World
