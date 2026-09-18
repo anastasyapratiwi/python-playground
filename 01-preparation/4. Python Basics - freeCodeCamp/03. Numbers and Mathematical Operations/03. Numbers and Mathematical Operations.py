@@ -179,7 +179,7 @@ print(result_2) # 3
 # - Basic syntax -
 # variable <operator>= value
 
-# -- 1. Addition (+=)
+# - 1. Addition (+=) -
 # - Comparison -
 # a. Using augmented assignment to add 5
 my_var = 10
@@ -202,6 +202,7 @@ print(count) # 11
 # - 3. Multiplication (*=) -
 product = 65
 product *= 7
+
 print(product) # 455
 
 # - 4. Division (/=) -
@@ -218,7 +219,7 @@ print(total_pages) # 4
 
 # - 6. Modulo assignment operator (%=) -
 bits = 35
-bits%= 2
+bits %= 2
 
 print(bits) # 1
 
@@ -237,7 +238,7 @@ print(greet) # Hello World
 
 # - b. Multiplication assignment to repeat a string -
 greet = 'Hello'
-greet*= 3
+greet *= 3
 
 print(greet) # HelloHelloHello
 
