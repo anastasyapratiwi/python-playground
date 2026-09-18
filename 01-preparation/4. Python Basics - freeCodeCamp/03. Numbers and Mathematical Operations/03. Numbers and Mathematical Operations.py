@@ -43,6 +43,13 @@ div_ints = my_int_1 / my_int_2
 print('Division:', div_ints) # Division: 4.666666666666667
 
 # -- 2. With Floats --
+# - Example -
+my_float_1 = -12.0
+my_float_2 = 4.9
+
+print(type(my_float_1)) # <class 'float'>
+print(type(my_float_2)) # <class 'float'>
+
 # - a. Addition -
 my_float_1 = 5.4
 my_float_2 = 12.0
@@ -167,3 +174,80 @@ print(result_1) # 8
 
 result_2 = pow(2, 3, 5) # (2 ** 3) % 5
 print(result_2) # 3
+
+# -- B. How Do Augmented Assignments Work? --
+# - Basic syntax -
+# variable <operator>= value
+
+# -- 1. Addition (+=)
+# - Comparison -
+# a. Using augmented assignment to add 5
+my_var = 10
+my_var += 5
+
+print(my_var) # 15
+
+# b. Without augmented assignment
+my_var = 10
+my_var = my_var + 5
+
+print(my_var) # 15
+
+# - 2. Substraction (-=) -
+count = 14
+count -= 3
+
+print(count) # 11
+
+# - 3. Multiplication (*=) -
+product = 65
+product *= 7
+print(product) # 455
+
+# - 4. Division (/=) -
+price = 100
+price /= 4
+
+print(price) # 25.0
+
+# - 5. Floor division (//=) -
+total_pages = 23
+total_pages //= 5
+
+print(total_pages) # 4
+
+# - 6. Modulo assignment operator (%=) -
+bits = 35
+bits%= 2
+
+print(bits) # 1
+
+# - 7. Exponentiation assignment operator (**=) -
+power = 2
+power **= 3
+
+print(power) # 8
+
+# - 8. Augmented assignment operators with strings -
+# - a. Addition assignment + strings -
+greet = 'Hello'
+greet += ' World'
+
+print(greet) # Hello World
+
+# - b. Multiplication assignment to repeat a string -
+greet = 'Hello'
+greet*= 3
+
+print(greet) # HelloHelloHello
+
+# - c. Other augmented assignments with strings = TypeError -
+greet = 'Hello'
+greet -= ' World'
+
+print(greet) # TypeError: unsupported operand type(s) for -=: 'str' and 'str'
+
+
+greet = 'Hello'
+greet /= ' World'
+print(greet) # TypeError: unsupported operand type(s) for /=: 'str' and 'str'
