@@ -14,7 +14,7 @@ print(3 != 4) # True
 print(3 >= 4) # False
 print(3 <= 4) # True
 
-# -- 1. Basic conditional (if clause) --
+# -- 1. Basic conditional (if statement) --
 # - a. Basic syntax -
 """
 if condition:
@@ -100,3 +100,75 @@ elif age >= 3:
   print('You are a young child')
 else:
   print('You are a toddler or an infant') # You are a toddler or an infant
+
+# -- B. What Are Truthy and Falsy Values, and How Do Boolean Operators and Short-Circuiting Work? --
+# - 1. Nested conditionals statements -
+# - Example code -
+is_citizen = True
+age = 25
+
+if is_citizen:
+  if age >= 18:
+    print('You are eligible to vote') # You are eligible to vote
+  else:
+    print('You are not eligible to vote')
+
+# - 2. Truthy and Falsy Values -
+# Example
+print(bool(False)) # False
+print(bool(0)) # False
+print(bool('')) # False
+
+print(bool(True)) # True
+print(bool(1)) # True
+print(bool('Hello')) # True
+
+# - 3. Boolean Operators -
+# - a. and - 
+# - i. Example code -
+is_citizen = True
+age = 25
+
+print(is_citizen and age) # 25
+
+# - ii. and operator in if...else statement - 
+is_citizen = True
+age = 25
+
+if is_citizen and age >= 18:
+  print('You are eligible to vote') # You are eligible to vote
+else:
+  print('You are not eligible to vote')
+
+# - b. or -
+# - i. Example code -
+age = 19
+is_employed = False
+
+print(age or is_employed) # 19
+
+# - ii. or operator in a conditional -
+age = 19
+is_student = True
+
+if age < 18 or is_student:
+  print('You are eligible for a student discount') # You are eligible for a student discount
+else:
+  print('You are not eligible for a student discount')
+
+# - c. not -
+# - i. Example code -
+print(not '') # True, because empty string is falsy
+print(not 'Hello') # False, because non-empty string is truthy
+print(not 0) # True, because 0 is falsy
+print(not 1) # False, because 1 is truthy
+print(not False) # True, because False is falsy
+print(not True) # False, because True is truthy
+
+# - iii. to check if something is not True or False in conditionals -
+is_admin = False
+
+if not is_admin:
+  print('Access denied for non-administrators.') # Access denied for non-administrators.
+else:
+  print('Welcome, Administrator!')
