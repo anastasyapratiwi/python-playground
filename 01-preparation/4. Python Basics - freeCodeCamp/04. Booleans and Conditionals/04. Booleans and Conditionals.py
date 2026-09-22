@@ -165,10 +165,11 @@ print(not 1) # False, because 1 is truthy
 print(not False) # True, because False is falsy
 print(not True) # False, because True is truthy
 
-# - iii. to check if something is not True or False in conditionals -
+# - ii. to check if something is not True or False in conditionals -
 is_admin = False
 
 if not is_admin:
   print('Access denied for non-administrators.') # Access denied for non-administrators.
 else:
   print('Welcome, Administrator!')
+ 
