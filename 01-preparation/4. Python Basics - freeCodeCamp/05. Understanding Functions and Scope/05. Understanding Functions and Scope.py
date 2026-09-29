@@ -20,7 +20,9 @@ print(int(False)) # 0
 def hello():
   print('Hello World')
 
-# - b. Function (sum of two numbers)
+hello() # Hello World
+
+# - b. Function (sum of two numbers) -
 def calculate_sum(a, b):
   print(a + b)
 
@@ -30,6 +32,7 @@ calculate_sum(3, 1) # 4
 
 # - b. Without the correct number (TypeError) -
 calculate_sum()
+# TypeError: calculate_sum() missing 2 required positional arguments: 'a' and 'b'
 
 # -- 5. return --
 # - a. Without return (None) -
@@ -46,3 +49,29 @@ def calculate_sum(a, b):
 my_sum = calculate_sum(3, 1)
 print(my_sum) # 4
 
+# -- B. What Is Scope in Python and How Does It Work? --
+# Example 1 (local and global scope)
+tax_rate = 0.1
+
+def calculate_tax(price):
+  tax = price * tax_rate
+  return tax
+
+print(calculate_tax(50)) # 5.0
+print(tax_rate) # 0.1
+print(tax) # NameError: name 'tax' is not defined
+
+# Example 2
+discount = 0.2
+
+def apply_discount(price):
+  amount = price * discount
+  return price - amount
+
+# Example 3
+def greet():
+  message = 'Hello!'
+  print(message)
+
+greet()
+print(message)
