@@ -76,3 +76,21 @@ def make_fried_egg(available_eggs):
         print("Made a fried egg. Yummy!")
     else:
         print("Could not make a fried egg. Not enough eggs!")
+
+# -- Step 15 --
+def make_fried_egg(available_eggs):
+    has_enough_eggs = available_eggs >= 1
+
+    if has_enough_eggs:
+        available_eggs = use_eggs(available_eggs, 1)
+        print('Made a fried egg. Yummy!')
+    else:
+        print('Could not make a fried egg. Not enough eggs!')
+
+    return available_eggs 
+
+# -- Step 16 --
+available_eggs = make_fried_egg(available_eggs)
+
+# -- Step 17 --
+check_kitchen_stock()
